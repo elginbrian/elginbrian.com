@@ -20,8 +20,10 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
   if (!isOpen && !showAnimation) return null;
 
   return (
-    <div className={`fixed inset-0 flex justify-center items-center z-50 mx-6 ${isOpen ? "fade-in" : "fade-out"}`}>
-      <div className={`relative bg-black border-2 border-white rounded-2xl p-8 max-w-2xl w-full z-10 scale-up-center`}>
+    <div className={`fixed inset-0 flex justify-center items-center z-50 ${isOpen ? "fade-in" : "fade-out"}`}>
+      <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
+
+      <div className={`relative bg-black border-2 border-gray-700 rounded-2xl mx-6 p-8 max-w-2xl w-full z-10 scale-up-center`}>
         <button className="absolute top-4 right-4 text-white hover:text-gray-300 text-2xl" onClick={onClose}>
           &times;
         </button>
@@ -30,7 +32,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
             <img src="https://i.gifer.com/17xo.gif" alt="Meme" width={120} height={20} />
 
             <ul className="text-sm text-center font-[family-name:var(--font-geist-mono)]">
-              <li className="mb-2">This website is still under development</li>
+              <li className="mb-2">This website is still under development.</li>
               <li className="mb-2">by: Elgin Brian Wahyu Bramadhika</li>
               <li>For now you can access my socials if you want to know more.</li>
             </ul>
