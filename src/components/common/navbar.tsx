@@ -1,77 +1,48 @@
 import { useState } from "react";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaCamera, FaDiagramProject, FaGamepad, FaGithub, FaHouse, FaInstagram, FaLinkedin, FaNewspaper } from "react-icons/fa6";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black border-b-2 border-gray-700 z-50">
-      <div className="container mx-auto flex justify-between items-center px-6 py-4">
-        <div className="text-white text-xl font-bold tracking-wide">
-          <a href="/">Elgin Brian</a>
-        </div>
-
-        <div className="hidden md:flex gap-6">
-          <a href="/projects" className="text-sm text-white hover:text-gray-400 transition-colors">
-            Projects
+    <>
+      <nav className="hidden md:block fixed right-6 top-1/2 transform -translate-y-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-4 md:p-6">
+        <div className="flex md:flex-col justify-between items-center gap-8">
+          <a href="/" className="text-white hover:text-gray-400 transition-colors" aria-label="Home">
+            <FaHouse size={24} />
           </a>
-          <a href="/activities" className="text-sm text-white hover:text-gray-400 transition-colors">
-            Activities
+          <a href="/projects" className="text-white hover:text-gray-400 transition-colors" aria-label="Projects">
+            <FaDiagramProject size={24} />
           </a>
-          <a href="/articles" className="text-sm text-white hover:text-gray-400 transition-colors">
-            Articles
+          <a href="/activities" className="text-white hover:text-gray-400 transition-colors" aria-label="Activities">
+            <FaCamera size={24} />
           </a>
-          <a href="/arcades" className="text-sm text-white hover:text-gray-400 transition-colors">
-            Arcades
+          <a href="/articles" className="text-white hover:text-gray-400 transition-colors" aria-label="Articles">
+            <FaNewspaper size={24} />
           </a>
-        </div>
-
-        <div className="hidden md:flex gap-4">
-          <a href="https://linkedin.com/in/elginbrian" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
-            <FaLinkedin size={20} />
-          </a>
-          <a href="https://github.com/elginbrian" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
-            <FaGithub size={20} />
-          </a>
-          <a href="https://www.instagram.com/_elginbrian/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
-            <FaInstagram size={20} />
+          <a href="/arcades" className="text-white hover:text-gray-400 transition-colors" aria-label="Arcades">
+            <FaGamepad size={24} />
           </a>
         </div>
+      </nav>
 
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white focus:outline-none">
-          <span className="text-2xl">&#9776;</span>
-        </button>
-      </div>
-
-      {isMenuOpen && (
-        <div className="md:hidden bg-black border-t-2 border-gray-700">
-          <div className="flex flex-col items-center gap-4 py-4">
-            <a href="/projects" className="text-sm text-white hover:text-gray-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Projects
-            </a>
-            <a href="/activities" className="text-sm text-white hover:text-gray-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Activities
-            </a>
-            <a href="/articles" className="text-sm text-white hover:text-gray-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Articles
-            </a>
-            <a href="/arcade" className="text-sm text-white hover:text-gray-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Arcades
-            </a>
-          </div>
-          <div className="flex justify-center gap-4 py-4 border-t border-gray-700">
-            <a href="https://linkedin.com/in/elginbrian" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
-              <FaLinkedin size={20} />
-            </a>
-            <a href="https://github.com/elginbrian" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
-              <FaGithub size={20} />
-            </a>
-            <a href="https://www.instagram.com/_elginbrian/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
-              <FaInstagram size={20} />
-            </a>
-          </div>
+      <nav className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-4">
+        <div className="flex justify-between items-center gap-8">
+          <a href="/" className="text-white hover:text-gray-400 transition-colors" aria-label="Home">
+            <FaHouse size={24} />
+          </a>
+          <a href="/projects" className="text-white hover:text-gray-400 transition-colors" aria-label="Projects">
+            <FaDiagramProject size={24} />
+          </a>
+          <a href="/activities" className="text-white hover:text-gray-400 transition-colors" aria-label="Activities">
+            <FaCamera size={24} />
+          </a>
+          <a href="/articles" className="text-white hover:text-gray-400 transition-colors" aria-label="Articles">
+            <FaNewspaper size={24} />
+          </a>
+          <a href="/arcades" className="text-white hover:text-gray-400 transition-colors" aria-label="Arcades">
+            <FaGamepad size={24} />
+          </a>
         </div>
-      )}
-    </nav>
+      </nav>
+    </>
   );
 }
