@@ -1,11 +1,8 @@
 "use client";
-
-import { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Modal from "@/components/common/intro-modal";
+import React, { useState } from "react";
 
-export default function Home() {
+const page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
 
   return (
@@ -13,4 +10,6 @@ export default function Home() {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}></Modal>
     </>
   );
-}
+};
+
+export default page;
