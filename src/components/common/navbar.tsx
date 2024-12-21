@@ -1,4 +1,4 @@
-import { FaCamera, FaDiagramProject, FaGamepad, FaHouse, FaNewspaper } from "react-icons/fa6";
+import { FaCamera, FaCodeBranch, FaDiagramProject, FaGamepad, FaHouse, FaNewspaper } from "react-icons/fa6";
 
 interface NavbarProps {
   activeLink: string;
@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeLink, setActiveLink }) => {
             <FaHouse size={24} />
           </a>
           <a href="/projects" className={getIconClasses("/projects")} aria-label="Projects" onClick={() => handleLinkClick("/projects")}>
-            <FaDiagramProject size={24} />
+            <FaCodeBranch size={24} />
           </a>
           <a href="/activities" className={getIconClasses("/activities")} aria-label="Activities" onClick={() => handleLinkClick("/activities")}>
             <FaCamera size={24} />
@@ -42,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeLink, setActiveLink }) => {
             <FaHouse size={24} />
           </a>
           <a href="/projects" className={getIconClasses("/projects")} aria-label="Projects" onClick={() => handleLinkClick("/projects")}>
-            <FaDiagramProject size={24} />
+            <FaCodeBranch size={24} />
           </a>
           <a href="/activities" className={getIconClasses("/activities")} aria-label="Activities" onClick={() => handleLinkClick("/activities")}>
             <FaCamera size={24} />
