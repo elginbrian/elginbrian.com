@@ -8,6 +8,11 @@ interface ModalProps {
 
 export default function Modal({ isOpen, onClose }: ModalProps) {
   const [showAnimation, setShowAnimation] = useState(false);
+  const [isLocalhost, setIsLocalhost] = useState(false);
+
+  useEffect(() => {
+    setIsLocalhost(window.location.origin === "http://localhost:3000");
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -24,9 +29,11 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
       <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
 
       <div className={`relative bg-black border-2 border-gray-700 rounded-2xl mx-6 p-8 max-w-2xl w-full z-10 scale-up-center`}>
-        <button className="absolute top-4 right-4 text-white hover:text-gray-300 text-2xl" onClick={onClose}>
-          &times;
-        </button>
+        {isLocalhost && (
+          <button className="absolute top-4 right-4 text-white hover:text-gray-300 text-2xl" onClick={onClose}>
+            &times;
+          </button>
+        )}
         <div className="text-white">
           <div className="flex flex-col gap-8 items-center">
             <img src="https://i.gifer.com/17xo.gif" alt="Meme" width={120} height={20} />
