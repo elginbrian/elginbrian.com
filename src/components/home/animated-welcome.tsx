@@ -4,17 +4,29 @@ import Image from "next/image";
 
 const AnimatedWelcome: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [isClient, setIsClient] = useState<boolean>(false);
 
   useEffect(() => {
+    setIsClient(true);
+
     const handleScroll = () => {
       setScrollPosition(document.documentElement.scrollTop);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", handleScroll);
+      }
     };
   }, []);
+
+  if (!isClient) {
+    return null;
+  }
 
   const imageShouldDisappear = scrollPosition > window.innerHeight * 0.5;
 
