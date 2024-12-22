@@ -36,22 +36,22 @@ const Navbar: React.FC<NavbarProps> = ({ activeLink, setActiveLink }) => {
         </div>
       </nav>
 
-      <nav className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-3">
-        <div className="flex justify-between items-center gap-6">
+      <nav className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-2">
+        <div className="flex justify-between items-center gap-4">
           <a href="/" className={getIconClasses("/")} aria-label="Home" onClick={() => handleLinkClick("/")}>
-            <FaHouse size={24} />
+            <FaHouse size={20} />
           </a>
           <a href="/projects" className={getIconClasses("/projects")} aria-label="Projects" onClick={() => handleLinkClick("/projects")}>
-            <FaCodeBranch size={24} />
+            <FaCodeBranch size={20} />
           </a>
           <a href="/activities" className={getIconClasses("/activities")} aria-label="Activities" onClick={() => handleLinkClick("/activities")}>
-            <FaCamera size={24} />
+            <FaCamera size={20} />
           </a>
           <a href="/articles" className={getIconClasses("/articles")} aria-label="Articles" onClick={() => handleLinkClick("/articles")}>
-            <FaNewspaper size={24} />
+            <FaNewspaper size={20} />
           </a>
           <a href="/arcades" className={getIconClasses("/arcades")} aria-label="Arcades" onClick={() => handleLinkClick("/arcades")}>
-            <FaGamepad size={24} />
+            <FaGamepad size={20} />
           </a>
         </div>
       </nav>
