@@ -5,7 +5,7 @@ interface PageNameProps {
 }
 
 const PageName: React.FC<PageNameProps> = ({ text }) => {
-  return <div className="absolute top-4 right-6 bg-white text-black text-sm font-sans font-semibold py-2 px-4 rounded-full">{text}</div>;
+  return <div className="fixed top-4 right-6 bg-white text-black text-sm font-sans font-semibold py-2 px-4 rounded-full">{text}</div>;
 };
 
 export default PageName;

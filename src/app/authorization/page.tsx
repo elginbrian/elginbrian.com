@@ -25,7 +25,7 @@ const Page: React.FC = () => {
 
       <button
         onClick={() => router.back()}
-        className="hidden sm:flex z-50 fixed sm:left-6 sm:top-[45%] bg-black rounded-full border border-solid border-white transition-colors items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+        className="hidden lg:flex z-50 fixed sm:left-6 sm:top-[45%] bg-black rounded-full border border-solid border-white transition-colors items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
       >
         <FaArrowLeft className="text-xl sm:text-2xl text-white sm:mr-2" />
         <span className="hidden sm:block">Back</span>
@@ -33,7 +33,7 @@ const Page: React.FC = () => {
 
       <button
         onClick={() => router.back()}
-        className="flex sm:hidden z-50 fixed bottom-6 right-6 rounded-full bg-black border border-solid border-white transition-colors items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+        className="flex lg:hidden z-50 fixed bottom-6 right-6 rounded-full bg-black border border-solid border-white transition-colors items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
       >
         <FaArrowLeft className="text-xl sm:text-2xl text-white sm:mr-2" />
         <span className="hidden sm:block">Back</span>

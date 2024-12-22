@@ -31,7 +31,7 @@ const CursorCircle: React.FC<CursorCircleProps> = ({ size, blur, gradientStart, 
     <div
       ref={circleRef}
       style={{
-        position: "absolute",
+        position: "fixed",
         width: `${size}px`,
         height: `${size}px`,
         borderRadius: "50%",
