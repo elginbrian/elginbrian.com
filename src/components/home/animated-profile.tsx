@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
   const [scrollY, setScrollY] = useState<number>(0);
@@ -54,8 +55,8 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
   };
 
   return (
-    <div style={{ position: "relative", width: "200px", height: "200px" }}>
-      <div style={circleStyle}></div>
+    <div className="relative w-[200px] h-[200px]">
+      <div style={circleStyle} className="absolute"></div>
       <Image
         src="/pluto.png"
         alt="Profile Front"
@@ -77,6 +78,47 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
           transform: `translate(-50%, -50%) rotateY(${flipped ? 0 : 180}deg)`,
         }}
       />
+      <div
+        className={`fixed text-white text-center transition-opacity duration-500 ${flipped ? "opacity-100" : "opacity-0"}`}
+        style={{
+          left: horizontalPosition,
+          top: `calc(${82 - 75 * t}vh + 130px)`,
+          transform: "translate(-50%, 0)",
+        }}
+      >
+        <div className="font-bold text-lg mb-2 sm:mb-1">Elgin Brian Wahyu Bramadhika</div>
+        <div className="text-medium mb-4">Software Engineering Enthusiast</div>
+
+        <div className="flex flex-wrap gap-4 justify-center items-center">
+          <a
+            className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            href="https://linkedin.com/in/elginbrian"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="text-xl sm:text-2xl text-white sm:mr-2" />
+            <span className="hidden sm:block">LinkedIn</span>
+          </a>
+          <a
+            className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            href="https://github.com/elginbrian"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="text-xl sm:text-2xl text-white sm:mr-2" />
+            <span className="hidden sm:block">GitHub</span>
+          </a>
+          <a
+            className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            href="https://www.instagram.com/_elginbrian/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram className="text-xl sm:text-2xl text-white sm:mr-2" />
+            <span className="hidden sm:block">Instagram</span>
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
