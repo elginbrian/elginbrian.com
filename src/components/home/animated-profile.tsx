@@ -51,7 +51,7 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
     zIndex: -1,
     transition: `transform 0.6s ease ${0.1 * t}s, left 0.1s ease, top 0.1s ease`,
     transform: `translate(-50%, -50%) rotateY(${flipped ? 180 : 180 * t}deg)`,
-    boxShadow: "0px 0px 30px rgba(51, 51, 51, 0.5)",
+    boxShadow: `0px 0px 30px rgba(51, 51, 51, 0.5)`,
   };
 
   return (
@@ -84,10 +84,11 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
           left: horizontalPosition,
           top: `calc(${82 - 75 * t}vh + 130px)`,
           transform: "translate(-50%, 0)",
+          zIndex: 2,
         }}
       >
-        <div className="font-bold text-lg mb-2 sm:mb-1">Elgin Brian Wahyu Bramadhika</div>
-        <div className="text-medium mb-4">Software Engineering Enthusiast</div>
+        <div className="font-bold text-medium sm:text-lg mb-2 sm:mb-1">Elgin Brian Wahyu Bramadhika</div>
+        <div className="text-sm sm:text-medium mb-6 sm:mb-4">Software Engineering Enthusiast</div>
 
         <div className="flex flex-wrap gap-4 justify-center items-center">
           <a
