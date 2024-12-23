@@ -16,7 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeLink, setActiveLink }) => {
 
   return (
     <>
-      <nav className="hidden md:flex fixed right-6 top-[27.5%] transform -translate-y-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-2 md:p-3 transition-all duration-500 ease-in-out opacity-0 blur-md fade-in-right">
+      <nav className="hidden md:flex fixed right-6 top-1/2 transform -translate-y-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-2 md:p-3 transition-all duration-500 ease-in-out opacity-0 blur-md fade-in-right">
         <div className="flex flex-col justify-center items-center gap-6">
           <a href="/" className={getIconClasses("/")} aria-label="Home" onClick={() => handleLinkClick("/")}>
             <FaHouse size={24} />
@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeLink, setActiveLink }) => {
         </div>
       </nav>
 
-      <nav className="md:hidden fixed bottom-6 left-[23.5%] transform -translate-x-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-2 transition-all duration-500 ease-in-out opacity-0 blur-md fade-in-bottom">
+      <nav className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-2 transition-all duration-500 ease-in-out opacity-0 blur-md fade-in-bottom">
         <div className="flex justify-center items-center gap-4">
           <a href="/" className={getIconClasses("/")} aria-label="Home" onClick={() => handleLinkClick("/")}>
             <FaHouse size={20} />
@@ -69,12 +69,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeLink, setActiveLink }) => {
           0% {
             opacity: 0;
             filter: blur(10px);
-            transform: translateX(20px);
           }
           100% {
             opacity: 1;
             filter: blur(0);
-            transform: translateX(0);
           }
         }
 
@@ -82,12 +80,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeLink, setActiveLink }) => {
           0% {
             opacity: 0;
             filter: blur(10px);
-            transform: translateY(20px);
           }
           100% {
             opacity: 1;
             filter: blur(0);
-            transform: translateY(0);
           }
         }
       `}</style>
