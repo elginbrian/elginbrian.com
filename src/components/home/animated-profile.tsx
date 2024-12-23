@@ -14,7 +14,7 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
       const currentScroll = Math.min(window.scrollY, scrollLimit);
       setScrollY(currentScroll);
 
-      const hideThreshold = window.innerHeight * 1.3;
+      const hideThreshold = window.innerHeight * 1.5;
       setIsHidden(window.scrollY >= hideThreshold);
     };
 

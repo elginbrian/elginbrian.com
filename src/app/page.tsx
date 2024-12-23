@@ -11,6 +11,8 @@ import "./globals.css";
 import AnimatedProfile from "@/components/home/animated-profile";
 import AnimatedWelcome from "@/components/home/animated-welcome";
 import Sparkles from "@/components/home/sparkle";
+import ProfileBar from "@/components/home/profile-bar";
+import HintBar from "@/components/home/hint-bar";
 
 const Page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
@@ -22,8 +24,10 @@ const Page: React.FC = () => {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <AuthorizeButton />
       <PageName text="Introduction" />
+      <HintBar />
       <Clock />
       <AnimatedProfile maxScroll={500} />
+      <ProfileBar name="Elgin Brian Wahyu Bramadhika" title="Software Engineering Enthusiast" avatarSrc="/avatar.png" />
       <AnimatedWelcome />
       <CursorCircle size={600} blur={40} gradientStart="rgba(255, 255, 255, 0.05)" gradientEnd="rgba(255, 255, 255, 0)" />
       <Sparkles />
