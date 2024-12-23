@@ -10,6 +10,7 @@ import AuthorizeButton from "@/components/common/authorize-button";
 import "./globals.css";
 import AnimatedProfile from "@/components/home/animated-profile";
 import AnimatedWelcome from "@/components/home/animated-welcome";
+import Sparkles from "@/components/home/sparkle";
 
 const Page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
@@ -19,15 +20,13 @@ const Page: React.FC = () => {
     <div className="dotted-background scrollbar-hide" style={{ minHeight: "300vh", position: "relative" }}>
       <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-
       <AuthorizeButton />
       <PageName text="Introduction" />
       <Clock />
-
       <AnimatedProfile maxScroll={500} />
       <AnimatedWelcome />
-
       <CursorCircle size={600} blur={40} gradientStart="rgba(255, 255, 255, 0.05)" gradientEnd="rgba(255, 255, 255, 0)" />
+      <Sparkles />
     </div>
   );
 };
