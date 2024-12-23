@@ -13,6 +13,7 @@ import AnimatedWelcome from "@/components/home/animated-welcome";
 import Sparkles from "@/components/home/sparkle";
 import ProfileBar from "@/components/home/profile-bar";
 import HintBar from "@/components/home/hint-bar";
+import WaveAnimation from "@/components/home/wave-animation";
 
 const Page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
@@ -21,6 +22,7 @@ const Page: React.FC = () => {
   return (
     <div className="dotted-background scrollbar-hide" style={{ minHeight: "300vh", position: "relative" }}>
       <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
+      <WaveAnimation />
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <AuthorizeButton />
       <PageName text="Introduction" />
