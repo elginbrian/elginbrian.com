@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
   const [scrollY, setScrollY] = useState<number>(0);
@@ -123,13 +123,13 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
           </a>
           <a
             className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://www.instagram.com/_elginbrian/"
+            href="mailto:elginbrian49@student.ub.ac.id"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram Profile"
+            aria-label="Email"
           >
-            <FaInstagram className="text-xl sm:text-2xl text-white sm:mr-2" />
-            <span className="hidden sm:block">Instagram</span>
+            <FaEnvelope className="text-xl sm:text-2xl text-white sm:mr-2" />
+            <span className="hidden sm:block">Email</span>
           </a>
         </div>
       </div>
