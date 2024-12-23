@@ -6,20 +6,39 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
   const [scrollY, setScrollY] = useState<number>(0);
   const [flipped, setFlipped] = useState<boolean>(false);
+  const [isHidden, setIsHidden] = useState<boolean>(false);
 
   useEffect(() => {
+    const scrollLimit = window.innerHeight * 0.5;
+    let hideTimeout: NodeJS.Timeout | null = null;
+
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      const currentScroll = Math.min(window.scrollY, scrollLimit);
+      setScrollY(currentScroll);
+
+      if (currentScroll >= scrollLimit) {
+        if (!hideTimeout) {
+          hideTimeout = setTimeout(() => {
+            setIsHidden(true);
+          }, 2000);
+        }
+      } else {
+        if (hideTimeout) {
+          clearTimeout(hideTimeout);
+          hideTimeout = null;
+        }
+        setIsHidden(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
+      if (hideTimeout) clearTimeout(hideTimeout);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const t = Math.min(scrollY / maxScroll, 1);
-
   const horizontalPosition = `calc(${52 - 55 * (1 - t) ** 2}vw)`;
   const verticalPosition = `calc(${82 - 75 * t}vh)`;
 
@@ -35,9 +54,11 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
     width: "200px",
     height: "200px",
     borderRadius: "50%",
-    transition: "transform 0.6s ease, left 0.1s ease, top 0.1s ease",
+    transition: "transform 0.6s ease, left 0.1s ease, top 0.1s ease, filter 0.5s ease",
     boxShadow: "0px 4px 15px rgba(173, 216, 230, 0.3)",
     backfaceVisibility: "hidden",
+    filter: isHidden ? "blur(10px)" : "blur(0)",
+    opacity: isHidden ? 0 : 1,
   };
 
   const circleStyle: React.CSSProperties = {
@@ -49,9 +70,10 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
     borderRadius: "50%",
     backgroundColor: "rgba(51, 51, 51, 0.2)",
     zIndex: -1,
-    transition: `transform 0.6s ease ${0.1 * t}s, left 0.1s ease, top 0.1s ease`,
+    transition: `transform 0.6s ease ${0.1 * t}s, left 0.1s ease, top 0.1s ease, filter 0.5s ease`,
     transform: `translate(-50%, -50%) rotateY(${flipped ? 180 : 180 * t}deg)`,
     boxShadow: `0px 0px 30px rgba(51, 51, 51, 0.5)`,
+    filter: isHidden ? "blur(10px)" : "blur(0)",
   };
 
   return (
@@ -79,7 +101,7 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
         }}
       />
       <div
-        className={`fixed text-white text-center transition-opacity duration-500 ${flipped ? "opacity-100" : "opacity-0"}`}
+        className={`fixed text-white text-center transition-opacity duration-500 ${isHidden ? "opacity-0" : flipped ? "opacity-100" : "opacity-0"}`}
         style={{
           left: horizontalPosition,
           top: `calc(${82 - 75 * t}vh + 130px)`,

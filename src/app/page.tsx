@@ -16,7 +16,7 @@ const Page: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>("/");
 
   return (
-    <div className="dotted-background scrollbar-hide" style={{ minHeight: "150vh", position: "relative" }}>
+    <div className="dotted-background scrollbar-hide" style={{ minHeight: "300vh", position: "relative" }}>
       <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
