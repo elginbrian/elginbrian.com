@@ -17,6 +17,7 @@
 .dotted-background {
   background: radial-gradient(circle, #48454a 1px, transparent 1px);
   background-size: 28px 28px;
+  background-attachment: fixed;
 }
 
 body {
