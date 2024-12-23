@@ -10,32 +10,16 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
 
   useEffect(() => {
     const scrollLimit = window.innerHeight * 0.5;
-    let hideTimeout: NodeJS.Timeout | null = null;
-
     const handleScroll = () => {
       const currentScroll = Math.min(window.scrollY, scrollLimit);
       setScrollY(currentScroll);
 
-      if (currentScroll >= scrollLimit) {
-        if (!hideTimeout) {
-          hideTimeout = setTimeout(() => {
-            setIsHidden(true);
-          }, 2000);
-        }
-      } else {
-        if (hideTimeout) {
-          clearTimeout(hideTimeout);
-          hideTimeout = null;
-        }
-        setIsHidden(false);
-      }
+      const hideThreshold = window.innerHeight * 1.3;
+      setIsHidden(window.scrollY >= hideThreshold);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      if (hideTimeout) clearTimeout(hideTimeout);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const t = Math.min(scrollY / maxScroll, 1);
@@ -47,18 +31,18 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
   }, [t]);
 
   const imageStyle: React.CSSProperties = {
-    transform: `translate(-50%, -50%) rotateY(${flipped ? 180 : 180 * t}deg)`,
     position: "fixed",
     left: horizontalPosition,
     top: verticalPosition,
     width: "200px",
     height: "200px",
     borderRadius: "50%",
-    transition: "transform 0.6s ease, left 0.1s ease, top 0.1s ease, filter 0.5s ease",
-    boxShadow: "0px 4px 15px rgba(173, 216, 230, 0.3)",
+    transition: "transform 0.6s ease, left 0.1s ease, top 0.1s ease, filter 0.6s ease, opacity 0.6s ease, box-shadow 0.5s ease, visibility 0s 0.6s", // Transition properties for smooth effect
+    boxShadow: isHidden ? "0px 4px 15px rgba(173, 216, 230, 0.0)" : "0px 4px 15px rgba(173, 216, 230, 0.3)",
     backfaceVisibility: "hidden",
-    filter: isHidden ? "blur(10px)" : "blur(0)",
-    opacity: isHidden ? 0 : 1,
+    filter: isHidden ? "blur(10px) opacity(0)" : "blur(0) opacity(1)",
+    visibility: isHidden ? "hidden" : "visible",
+    transform: `translate(-50%, -50%) rotateY(${flipped ? 180 : 180 * t}deg) ${isHidden ? "scale(0)" : "scale(1)"}`,
   };
 
   const circleStyle: React.CSSProperties = {
@@ -74,6 +58,7 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
     transform: `translate(-50%, -50%) rotateY(${flipped ? 180 : 180 * t}deg)`,
     boxShadow: `0px 0px 30px rgba(51, 51, 51, 0.5)`,
     filter: isHidden ? "blur(10px)" : "blur(0)",
+    opacity: isHidden ? 0 : 1,
   };
 
   return (
@@ -89,6 +74,7 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
           opacity: flipped ? 0 : 1,
         }}
       />
+
       <Image
         src="/avatar.png"
         alt="Profile Back"
@@ -101,12 +87,14 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
         }}
       />
       <div
-        className={`fixed text-white text-center transition-opacity duration-500 ${isHidden ? "opacity-0" : flipped ? "opacity-100" : "opacity-0"}`}
+        className={`fixed text-white text-center transition-opacity duration-500 ${isHidden ? "opacity-0 visibility-hidden" : flipped ? "opacity-100" : "opacity-0"}`}
         style={{
           left: horizontalPosition,
           top: `calc(${82 - 75 * t}vh + 130px)`,
           transform: "translate(-50%, 0)",
           zIndex: 2,
+          visibility: isHidden ? "hidden" : "visible",
+          transition: "visibility 0s 0.6s, opacity 0.5s ease",
         }}
       >
         <div className="font-bold text-medium sm:text-lg mb-2 sm:mb-1">Elgin Brian Wahyu Bramadhika</div>
@@ -118,6 +106,7 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
             href="https://linkedin.com/in/elginbrian"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
           >
             <FaLinkedin className="text-xl sm:text-2xl text-white sm:mr-2" />
             <span className="hidden sm:block">LinkedIn</span>
@@ -127,6 +116,7 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
             href="https://github.com/elginbrian"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub Profile"
           >
             <FaGithub className="text-xl sm:text-2xl text-white sm:mr-2" />
             <span className="hidden sm:block">GitHub</span>
@@ -136,6 +126,7 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
             href="https://www.instagram.com/_elginbrian/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Instagram Profile"
           >
             <FaInstagram className="text-xl sm:text-2xl text-white sm:mr-2" />
             <span className="hidden sm:block">Instagram</span>
