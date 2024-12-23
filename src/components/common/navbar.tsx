@@ -16,8 +16,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeLink, setActiveLink }) => {
 
   return (
     <>
-      <nav className="hidden md:block fixed right-6 top-1/4 transform -translate-y-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-2 md:p-3 transition-all duration-500 ease-in-out opacity-0 blur-md fade-in-right">
-        <div className="flex md:flex-col justify-between items-center gap-6">
+      <nav className="hidden md:flex fixed right-6 top-[27.5%] transform -translate-y-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-2 md:p-3 transition-all duration-500 ease-in-out opacity-0 blur-md fade-in-right">
+        <div className="flex flex-col justify-center items-center gap-6">
           <a href="/" className={getIconClasses("/")} aria-label="Home" onClick={() => handleLinkClick("/")}>
             <FaHouse size={24} />
           </a>
@@ -36,8 +36,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeLink, setActiveLink }) => {
         </div>
       </nav>
 
-      <nav className="md:hidden fixed bottom-6 left-1/4 transform -translate-x-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-2 transition-all duration-500 ease-in-out opacity-0 blur-md fade-in-bottom">
-        <div className="flex justify-between items-center gap-4">
+      <nav className="md:hidden fixed bottom-6 left-[23.5%] transform -translate-x-1/2 bg-black border-2 border-gray-700 rounded-full shadow-lg z-50 p-2 transition-all duration-500 ease-in-out opacity-0 blur-md fade-in-bottom">
+        <div className="flex justify-center items-center gap-4">
           <a href="/" className={getIconClasses("/")} aria-label="Home" onClick={() => handleLinkClick("/")}>
             <FaHouse size={20} />
           </a>
