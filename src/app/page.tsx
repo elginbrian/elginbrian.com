@@ -14,6 +14,7 @@ import Sparkles from "@/components/home/sparkle";
 import ProfileBar from "@/components/home/profile-bar";
 import HintBar from "@/components/home/hint-bar";
 import WaveAnimation from "@/components/home/wave-animation";
+import InfoGrid from "@/components/home/info-grid";
 
 const Page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
@@ -33,6 +34,7 @@ const Page: React.FC = () => {
       <AnimatedWelcome />
       <CursorCircle size={600} blur={40} gradientStart="rgba(255, 255, 255, 0.05)" gradientEnd="rgba(255, 255, 255, 0)" />
       <Sparkles />
+      <InfoGrid />
     </div>
   );
 };
