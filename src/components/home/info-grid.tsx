@@ -5,8 +5,8 @@ import AboutContent, { AboutContentExpanded } from "./about-content";
 import ContactLinks from "./contact-links";
 import ExpandedBox from "./expanded-box";
 import TechStackContent from "./tech-stack-content";
-import ExperienceContent from "./experience-content";
-import AchievementContent from "./achievement-content";
+import ExperienceContent, { ExperienceContentExpanded } from "./experience-content";
+import AchievementContent, { AchievementContentExpanded } from "./achievement-content";
 
 const InfoGrid: React.FC = () => {
   const [showGrid, setShowGrid] = useState(false);
@@ -112,7 +112,7 @@ const InfoGrid: React.FC = () => {
               <FaDesktop className="text-3xl text-white" />
               <FaMobile className="text-3xl text-white" />
             </div>
-            <p className="text-sm text-white">This section is not available on medium devices.</p>
+            <p className="text-sm text-white">This section is currently not available on medium devices.</p>
             <p className="text-sm text-white mt-2">Please resize to a small device (mobile) or a large device (desktop).</p>
             <button onClick={toggleFullscreen} className="mt-4 px-4 py-2 bg-black text-white text-sm rounded-full border-2 border-white hover:bg-gray-700 focus:outline-none">
               {isFullscreen ? "Exit Fullscreen" : "Go Fullscreen"}
@@ -144,6 +144,7 @@ const InfoGrid: React.FC = () => {
             <InfoBox
               title="Experience"
               description={<ExperienceContent />}
+              showTitleOnDesktop={false}
               onClick={() => handleBoxClick("experience")}
               isExpanded={!!expandedBox}
               className="bg-[rgb(0,0,0,0.5)] border-gray-700 hover:border-white border-2 text-white flex flex-col items-center justify-center rounded-lg max-h-[160px] sm:max-h-none sm:min-h-[250px] cursor-pointer sm:pointer-events-none relative"
@@ -151,6 +152,7 @@ const InfoGrid: React.FC = () => {
             <InfoBox
               title="Achievement"
               description={<AchievementContent />}
+              showTitleOnDesktop={false}
               onClick={() => handleBoxClick("achievement")}
               isExpanded={!!expandedBox}
               className="bg-[rgb(0,0,0,0.5)] border-gray-700 hover:border-white border-2 text-white flex flex-col items-center justify-center rounded-lg max-h-[160px] sm:max-h-none sm:min-h-[250px] cursor-pointer sm:pointer-events-none relative"
@@ -161,9 +163,9 @@ const InfoGrid: React.FC = () => {
 
           {expandedBox === "techStack" && <ExpandedBox title="Tech Stack" content={<p className="text-base mt-2 sm:mt-8 text-justify">Coming soon...</p>} onClose={closeExpandedBox} />}
 
-          {expandedBox === "experience" && <ExpandedBox title="Experience" content={<p className="text-base mt-2 sm:mt-8 text-justify">Coming soon...</p>} onClose={closeExpandedBox} />}
+          {expandedBox === "experience" && <ExpandedBox title="Experience" content={<ExperienceContentExpanded />} onClose={closeExpandedBox} />}
 
-          {expandedBox === "achievement" && <ExpandedBox title="Achievement" content={<p className="text-base mt-2 sm:mt-8 text-justify">Coming soon...</p>} onClose={closeExpandedBox} />}
+          {expandedBox === "achievement" && <ExpandedBox title="Achievement" content={<AchievementContentExpanded />} onClose={closeExpandedBox} />}
         </>
       )}
     </div>
