@@ -4,6 +4,8 @@ import CursorCircle from "@/components/common/cursor-circle";
 import Modal from "@/components/common/intro-modal";
 import Navbar from "@/components/common/navbar";
 import PageName from "@/components/common/page-name";
+import MeteorShower from "@/components/home/meteor-shower";
+
 import React, { useState } from "react";
 
 const page: React.FC = () => {
@@ -17,6 +19,7 @@ const page: React.FC = () => {
       <PageName text="Previous Projects" />
       <Clock />
       <CursorCircle size={600} blur={40} gradientStart="rgba(255, 255, 255, 0.05)" gradientEnd="rgba(255, 255, 255, 0)" />
+      <MeteorShower />
     </div>
   );
 };
