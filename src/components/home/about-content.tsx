@@ -6,7 +6,17 @@ import ContactLinks from "./contact-links";
 const AboutContent: React.FC = () => {
   return (
     <div className="flex flex-col items-center">
-      <Image alt="profile" src="/avatar.png" width={150} height={150} className="hidden sm:block text-white cursor-pointer mx-auto" />
+      <Image
+        alt="profile"
+        src="/avatar.png"
+        width={150}
+        height={150}
+        className="hidden sm:block text-white cursor-pointer mx-auto"
+        style={{
+          filter: "drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3))",
+          borderRadius: "50%",
+        }}
+      />
 
       <p className="text-sm sm:text-base mt-2 sm:mt-8 text-center sm:text-justify">Hi, I am Elgin Brian Wahyu Bramadhika, a second-year Information Technology student at the Faculty of Computer Science, Universitas Brawijaya.</p>
 

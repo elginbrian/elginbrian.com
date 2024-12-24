@@ -4,6 +4,9 @@ import InfoBox from "./info-box";
 import AboutContent, { AboutContentExpanded } from "./about-content";
 import ContactLinks from "./contact-links";
 import ExpandedBox from "./expanded-box";
+import TechStackContent from "./tech-stack-content";
+import ExperienceContent from "./experience-content";
+import AchievementContent from "./achievement-content";
 
 const InfoGrid: React.FC = () => {
   const [showGrid, setShowGrid] = useState(false);
@@ -77,21 +80,21 @@ const InfoGrid: React.FC = () => {
             />
             <InfoBox
               title="Tech Stack"
-              description={<p>Coming soon...</p>}
+              description={<TechStackContent />}
               onClick={() => handleBoxClick("techStack")}
               isExpanded={!!expandedBox}
               className="bg-[rgb(0,0,0,0.5)] border-gray-700 hover:border-white border-2 text-white flex flex-col items-center justify-center rounded-lg col-span-2 min-h-[100px] sm:min-h-[220px] cursor-pointer sm:pointer-events-none relative"
             />
             <InfoBox
               title="Experience"
-              description={<p>Coming soon...</p>}
+              description={<ExperienceContent />}
               onClick={() => handleBoxClick("experience")}
               isExpanded={!!expandedBox}
               className="bg-[rgb(0,0,0,0.5)] border-gray-700 hover:border-white border-2 text-white flex flex-col items-center justify-center rounded-lg max-h-[160px] sm:max-h-none sm:min-h-[250px] cursor-pointer sm:pointer-events-none relative"
             />
             <InfoBox
               title="Achievement"
-              description={<p>Coming soon...</p>}
+              description={<AchievementContent />}
               onClick={() => handleBoxClick("achievement")}
               isExpanded={!!expandedBox}
               className="bg-[rgb(0,0,0,0.5)] border-gray-700 hover:border-white border-2 text-white flex flex-col items-center justify-center rounded-lg max-h-[160px] sm:max-h-none sm:min-h-[250px] cursor-pointer sm:pointer-events-none relative"
