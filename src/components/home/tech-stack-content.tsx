@@ -7,7 +7,7 @@ const TechStackContent: React.FC = () => {
       <Image
         alt="profile"
         src="/tech/github-stack.svg"
-        width={320}
+        width={280}
         height={100}
         className="block sm:hidden text-white cursor-pointer mx-auto mt-2"
         style={{

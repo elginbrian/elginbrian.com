@@ -9,7 +9,7 @@ const ExperienceContent: React.FC = () => {
         src="/experience.png"
         width={85}
         height={85}
-        className="animate-float block sm:hidden text-white cursor-pointer mx-auto"
+        className="animate-float block sm:hidden text-white cursor-pointer mx-auto mt-2"
         style={{
           filter: "drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3))",
         }}
