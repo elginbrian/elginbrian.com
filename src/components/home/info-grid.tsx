@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import { FaExpand } from "react-icons/fa6";
 import InfoBox from "./info-box";
@@ -15,7 +14,7 @@ const InfoGrid: React.FC = () => {
   const [expandedBox, setExpandedBox] = useState<string | null>(null);
   const [closing, setClosing] = useState(false);
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
 
   const handleScroll = () => {
     if (window.scrollY > window.innerHeight * 1.55) {
@@ -30,12 +29,15 @@ const InfoGrid: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   useEffect(() => {
@@ -43,13 +45,13 @@ const InfoGrid: React.FC = () => {
   }, [showGrid]);
 
   useEffect(() => {
-    if (windowWidth > 768) {
+    if (windowWidth && windowWidth > 768) {
       closeExpandedBox();
     }
   }, [windowWidth]);
 
   const handleBoxClick = (box: string) => {
-    if (windowWidth <= 768) {
+    if (windowWidth && windowWidth <= 768) {
       setExpandedBox(box);
     }
   };
