@@ -102,34 +102,34 @@ const AnimatedProfile: React.FC<{ maxScroll: number }> = ({ maxScroll }) => {
 
         <div className="flex flex-wrap gap-4 justify-center items-center">
           <a
-            className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 lg:h-12 px-4 lg:px-5 lg:min-w-44"
             href="https://linkedin.com/in/elginbrian"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
           >
-            <FaLinkedin className="text-xl sm:text-2xl text-white sm:mr-2" />
-            <span className="hidden sm:block">LinkedIn</span>
+            <FaLinkedin className="text-xl sm:text-2xl text-white lg:mr-2" />
+            <span className="hidden lg:block">LinkedIn</span>
           </a>
           <a
-            className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 lg:h-12 px-4 lg:px-5 lg:min-w-44"
             href="https://github.com/elginbrian"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
           >
-            <FaGithub className="text-xl sm:text-2xl text-white sm:mr-2" />
-            <span className="hidden sm:block">GitHub</span>
+            <FaGithub className="text-xl sm:text-2xl text-white lg:mr-2" />
+            <span className="hidden lg:block">GitHub</span>
           </a>
           <a
-            className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            className="rounded-full border border-solid border-white transition-colors flex items-center justify-center hover:bg-gray-700 hover:border-transparent text-sm sm:text-base h-10 lg:h-12 px-4 lg:px-5 lg:min-w-44"
             href="mailto:elginbrian49@student.ub.ac.id"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Email"
           >
-            <FaEnvelope className="text-xl sm:text-2xl text-white sm:mr-2" />
-            <span className="hidden sm:block">Email</span>
+            <FaEnvelope className="text-xl sm:text-2xl text-white lg:mr-2" />
+            <span className="hidden lg:block">Email</span>
           </a>
         </div>
       </div>

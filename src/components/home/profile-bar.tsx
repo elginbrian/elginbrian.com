@@ -20,7 +20,7 @@ const ProfileBar: React.FC<ProfileBarProps> = ({ name, title, avatarSrc, avatarS
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth > 768);
     };
 
     window.addEventListener("scroll", handleScroll);

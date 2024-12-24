@@ -135,3 +135,19 @@ body {
     transform: translate(-100vw, 100vh) rotate(45deg);
   }
 }
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-animation {
+  animation: floating 3s ease-in-out infinite;
+}
