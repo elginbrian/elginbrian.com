@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { FaExpand } from "react-icons/fa6";
 import InfoBox from "./info-box";
