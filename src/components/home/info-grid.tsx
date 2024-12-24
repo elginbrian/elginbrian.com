@@ -113,7 +113,7 @@ const InfoGrid: React.FC = () => {
               <FaMobile className="text-3xl text-white" />
             </div>
             <p className="text-sm text-white">This section is not available on medium devices.</p>
-            <p className="text-sm text-white mt-2">Please switch to a small device (mobile) or a large device (desktop).</p>
+            <p className="text-sm text-white mt-2">Please resize to a small device (mobile) or a large device (desktop).</p>
             <button onClick={toggleFullscreen} className="mt-4 px-4 py-2 bg-black text-white text-sm rounded-full border-2 border-white hover:bg-gray-700 focus:outline-none">
               {isFullscreen ? "Exit Fullscreen" : "Go Fullscreen"}
             </button>
