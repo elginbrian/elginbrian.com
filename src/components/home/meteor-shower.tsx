@@ -26,15 +26,18 @@ const MeteorShower: React.FC = () => {
   const meteors = useMemo(() => {
     return Array.from({ length: 50 }, () => {
       const opacity = Math.random();
+      const animationDuration = windowWidth && windowWidth < 768 ? 3 + Math.random() * 1.5 : 4 + Math.random() * 2;
+      const topPosition = windowWidth && windowWidth < 768 ? `${Math.random() * 30 - 15}vh` : `${Math.random() * 50 - 30}vh`;
+
       return {
         left: `${Math.random() * 100}vw`,
-        top: `${Math.random() * 50 - 30}vh`,
+        top: topPosition,
         animationDelay: `${Math.random() * 5}s`,
-        animationDuration: `${4 + Math.random() * 2}s`,
+        animationDuration: `${animationDuration}s`,
         color: `rgba(255, 255, 255, ${opacity})`,
       };
     });
-  }, []);
+  }, [windowWidth]);
 
   return (
     <>
