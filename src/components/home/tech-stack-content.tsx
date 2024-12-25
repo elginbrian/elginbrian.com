@@ -110,7 +110,7 @@ const TechStackContent: React.FC = () => {
 export const TechStackContentExpanded: React.FC = () => {
   return (
     <div className="">
-      <div className={`grid pt-6 transform transition-all duration-700 ease-in-out w-full h-full gap-4 grid-cols-2 grid-rows-2 box-border`}>
+      <div className={`grid pt-6 pb-2 transform transition-all duration-700 ease-in-out w-full h-full gap-6 grid-cols-2 grid-rows-2 box-border`}>
         <InfoBox
           title="Mobile"
           showExpandedOnMobile={false}
@@ -119,7 +119,7 @@ export const TechStackContentExpanded: React.FC = () => {
               <Image
                 alt="Mobile Tech"
                 src="/tech/mobile-stack.svg"
-                width={80}
+                width={100}
                 height={80}
                 className="mx-auto mt-4 floating-animation"
                 style={{
@@ -131,7 +131,7 @@ export const TechStackContentExpanded: React.FC = () => {
           }
           onClick={() => {}}
           isExpanded={true}
-          className="border-gray-700 border-2 text-white flex flex-col items-center justify-center rounded-lg cursor-pointer relative p-2 pt-4"
+          className="border-0 text-white flex flex-col items-center justify-center rounded-lg cursor-pointer relative"
         />
         <InfoBox
           title="Frontend"
@@ -141,8 +141,8 @@ export const TechStackContentExpanded: React.FC = () => {
               <Image
                 alt="Frontend Tech"
                 src="/tech/frontend-stack.svg"
-                width={80}
-                height={80}
+                width={100}
+                height={100}
                 className="mx-auto mt-4 floating-animation"
                 style={{
                   filter: "drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2))",
@@ -153,7 +153,7 @@ export const TechStackContentExpanded: React.FC = () => {
           }
           onClick={() => {}}
           isExpanded={true}
-          className="border-gray-700 border-2 text-white flex flex-col items-center justify-center rounded-lg cursor-pointer relative p-2 pt-4"
+          className="border-0 text-white flex flex-col items-center justify-center rounded-lg cursor-pointer relative"
         />
         <InfoBox
           title="Backend"
@@ -163,8 +163,8 @@ export const TechStackContentExpanded: React.FC = () => {
               <Image
                 alt="Backend Tech"
                 src="/tech/backend-stack.svg"
-                width={80}
-                height={80}
+                width={100}
+                height={100}
                 className="mx-auto mt-4 floating-animation"
                 style={{
                   filter: "drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2))",
@@ -175,7 +175,7 @@ export const TechStackContentExpanded: React.FC = () => {
           }
           onClick={() => {}}
           isExpanded={true}
-          className="border-gray-700 border-2  text-white flex flex-col items-center justify-center rounded-lg cursor-pointer relative p-2 pt-4"
+          className="border-0  text-white flex flex-col items-center justify-center rounded-lg cursor-pointer relative"
         />
         <InfoBox
           title="DB & Tools"
@@ -185,8 +185,8 @@ export const TechStackContentExpanded: React.FC = () => {
               <Image
                 alt="Tools Tech"
                 src="/tech/tools-stack.svg"
-                width={80}
-                height={80}
+                width={100}
+                height={100}
                 className="mx-auto mt-4 floating-animation"
                 style={{
                   filter: "drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2))",
@@ -197,7 +197,7 @@ export const TechStackContentExpanded: React.FC = () => {
           }
           onClick={() => {}}
           isExpanded={true}
-          className="border-gray-700 border-2 text-white flex flex-col items-center justify-center rounded-lg cursor-pointer relative p-2 pt-4"
+          className="text-white flex flex-col items-center justify-center rounded-lg cursor-pointer relative"
         />
       </div>
     </div>
