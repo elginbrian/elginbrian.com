@@ -10,6 +10,7 @@ import Sparkles from "@/components/home/sparkle";
 import CategoryBar from "@/components/projects/category-bar";
 import ProjectList from "@/components/projects/project-list";
 import AnimatedIcon from "@/components/projects/animated-icon";
+import TopShade from "@/components/projects/top-shade";
 
 const ProjectsPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
@@ -25,6 +26,7 @@ const ProjectsPage: React.FC = () => {
       <Sparkles />
       <CategoryBar activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
       <ProjectList activeCategory={activeCategory} />
+      <TopShade />
     </div>
   );
 };
