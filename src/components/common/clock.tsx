@@ -15,7 +15,11 @@ const Clock: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return <div style={{ position: "fixed", top: "24px", left: "24px", color: "#fff", fontSize: "18px", fontFamily: "Arial, sans-serif" }}>{time}</div>;
+  return (
+    <div className="z-50" style={{ position: "fixed", top: "24px", left: "24px", color: "#fff", fontSize: "18px", fontFamily: "Arial, sans-serif" }}>
+      {time}
+    </div>
+  );
 };
 
 export default Clock;
