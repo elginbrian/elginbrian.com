@@ -16,6 +16,7 @@ import HintBar from "@/components/home/hint-bar";
 import WaveAnimation from "@/components/home/wave-animation";
 import InfoGrid from "@/components/home/info-grid";
 import MeteorShower from "@/components/home/meteor-shower";
+import DownloadCV from "@/components/home/download-cv";
 
 const Page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
@@ -37,6 +38,7 @@ const Page: React.FC = () => {
       <Sparkles />
       <MeteorShower />
       <InfoGrid />
+      <DownloadCV />
     </div>
   );
 };

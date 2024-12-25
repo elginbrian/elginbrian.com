@@ -12,7 +12,6 @@ const ExpandedBox: React.FC<ExpandedBoxProps> = ({ title, content, onClose }) =>
       <div className="relative bg-black border-gray-700 border-2 text-white flex flex-col items-center justify-center rounded-lg">
         <FaX className="absolute top-4 right-4 cursor-pointer text-white" onClick={onClose} />
         <div className="p-4 w-full sm:w-3/4">
-          <h3 className="text-xl font-semibold">{title}</h3>
           <div className="text-base mt-2 sm:mt-8">{content}</div>
         </div>
       </div>

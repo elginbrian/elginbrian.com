@@ -54,6 +54,7 @@ const AboutContent: React.FC = () => {
 export const AboutContentExpanded: React.FC = () => {
   return (
     <div className="">
+      <h3 className="text-xl font-semibold">About</h3>
       <p className="text-base mt-2 sm:mt-8 text-justify">Hi, I am Elgin Brian Wahyu Bramadhika, a second-year Information Technology student at the Faculty of Computer Science, Universitas Brawijaya.</p>
 
       <p className="text-base mt-4 text-justify mb-8">

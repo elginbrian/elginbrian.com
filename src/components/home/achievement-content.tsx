@@ -67,8 +67,9 @@ const AchievementContent: React.FC = () => {
 export const AchievementContentExpanded: React.FC = () => {
   return (
     <div className="">
+      <h3 className="text-xl font-semibold items-center flex flex-row justify-center mb-4 absolute top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Achievement</h3>
       {achievements.map((achievement, index) => (
-        <div key={index} className="flex items-start gap-4 mb-6 mt-4 rounded-lg shadow-sm text-white">
+        <div key={index} className="flex items-start gap-4 mb-6 mx-4 mt-4 rounded-lg shadow-sm text-white">
           <Image
             alt={`${achievement.company} logo`}
             src={achievement.logo}
