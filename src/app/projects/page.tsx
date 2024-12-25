@@ -1,34 +1,32 @@
 "use client";
+
+import React, { useState } from "react";
 import Clock from "@/components/common/clock";
 import CursorCircle from "@/components/common/cursor-circle";
 import Modal from "@/components/common/intro-modal";
 import Navbar from "@/components/common/navbar";
 import PageName from "@/components/common/page-name";
-import MeteorShower from "@/components/home/meteor-shower";
 import Sparkles from "@/components/home/sparkle";
-import AnimatedIcon from "@/components/projects/animated-icon";
 import CategoryBar from "@/components/projects/category-bar";
 import ProjectList from "@/components/projects/project-list";
+import AnimatedIcon from "@/components/projects/animated-icon";
 
-import React, { useState } from "react";
-
-const page: React.FC = () => {
+const ProjectsPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
   const [activeLink, setActiveLink] = useState<string>("/projects");
+  const [activeCategory, setActiveCategory] = useState<string>("All");
 
   return (
-    <div className="dotted-background" style={{ minHeight: "300vh" }}>
+    <div className="dotted-background min-h-screen">
       <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
-
       <PageName text="Previous Projects" />
       <Clock />
       <CursorCircle size={600} blur={40} gradientStart="rgba(255, 255, 255, 0.05)" gradientEnd="rgba(255, 255, 255, 0)" />
       <Sparkles />
-      <CategoryBar />
-      <ProjectList />
-      {/* <AnimatedIcon /> */}
+      <CategoryBar activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+      <ProjectList activeCategory={activeCategory} />
     </div>
   );
 };
 
-export default page;
+export default ProjectsPage;

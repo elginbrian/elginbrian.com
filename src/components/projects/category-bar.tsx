@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const categories = ["All", "Mobile", "Web", "FE", "BE"];
+const categories = ["All", "Mobile", "Web", "Frontend", "Backend"];
 
-const CategoryBar: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+interface CategoryBarProps {
+  activeCategory: string;
+  setActiveCategory: (category: string) => void;
+}
 
+const CategoryBar: React.FC<CategoryBarProps> = ({ activeCategory, setActiveCategory }) => {
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category);
   };
