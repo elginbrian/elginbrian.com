@@ -26,7 +26,7 @@ const DownloadCV: React.FC = () => {
   return (
     <div>
       <nav
-        className={`fixed bottom-52 sm:bottom-6 left-1/2 transform -translate-x-1/2 sm:bg-black bg-[rgb(0,0,0,0.5)] rounded-full shadow-lg z-50 transition-all duration-500 ease-in-out ${isVisible ? "fade-in block" : "fade-out hiddenfix"}`}
+        className={`fixed bottom-52 sm:bottom-6 left-1/2 transform -translate-x-1/2 sm:bg-black bg-[rgb(0,0,0,0.5)] rounded-full shadow-lg z-50 transition-all duration-500 ease-in-out ${isVisible ? "fade-in block" : "fade-out hidden"}`}
         style={{
           filter: "drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2))",
         }}
