@@ -4,7 +4,7 @@ import InfoBox from "./info-box";
 import AboutContent, { AboutContentExpanded } from "./about-content";
 import ContactLinks from "./contact-links";
 import ExpandedBox from "./expanded-box";
-import TechStackContent from "./tech-stack-content";
+import TechStackContent, { TechStackContentExpanded } from "./tech-stack-content";
 import ExperienceContent, { ExperienceContentExpanded } from "./experience-content";
 import AchievementContent, { AchievementContentExpanded } from "./achievement-content";
 
@@ -161,7 +161,7 @@ const InfoGrid: React.FC = () => {
 
           {expandedBox === "about" && <ExpandedBox title="About" content={<AboutContentExpanded />} onClose={closeExpandedBox} />}
 
-          {expandedBox === "techStack" && <ExpandedBox title="Tech Stack" content={<p className="text-base mt-2 sm:mt-8 text-justify">Coming soon...</p>} onClose={closeExpandedBox} />}
+          {expandedBox === "techStack" && <ExpandedBox title="Tech Stack" content={<TechStackContentExpanded />} onClose={closeExpandedBox} />}
 
           {expandedBox === "experience" && <ExpandedBox title="Experience" content={<ExperienceContentExpanded />} onClose={closeExpandedBox} />}
 
