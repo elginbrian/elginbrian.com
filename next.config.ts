@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "media.licdn.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+        pathname: "/**",
+      },
     ],
   },
 };

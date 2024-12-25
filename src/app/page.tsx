@@ -26,7 +26,6 @@ const Page: React.FC = () => {
     <div className="dotted-background scrollbar-hide" style={{ minHeight: "300vh", position: "relative" }}>
       <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
       <WaveAnimation />
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <AuthorizeButton />
       <PageName text="Introduction" />
       <HintBar />

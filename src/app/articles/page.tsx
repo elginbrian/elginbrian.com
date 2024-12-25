@@ -17,6 +17,7 @@ const page: React.FC = () => {
 
       <PageName text="Tech Articles" />
       <Clock />
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <CursorCircle size={600} blur={40} gradientStart="rgba(255, 255, 255, 0.05)" gradientEnd="rgba(255, 255, 255, 0)" />
       <Sparkles />
     </div>

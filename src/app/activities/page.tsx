@@ -1,4 +1,7 @@
 "use client";
+import ActivityList from "@/components/activities/activity-list";
+import ActivityProfileBar from "@/components/activities/activity-profile-bar";
+import ActivityTopShade from "@/components/activities/activity-top-shade";
 import Clock from "@/components/common/clock";
 import CursorCircle from "@/components/common/cursor-circle";
 import Modal from "@/components/common/intro-modal";
@@ -19,6 +22,9 @@ const page: React.FC = () => {
       <Clock />
       <CursorCircle size={600} blur={40} gradientStart="rgba(255, 255, 255, 0.05)" gradientEnd="rgba(255, 255, 255, 0)" />
       <Sparkles />
+      <ActivityList />
+      <ActivityProfileBar name="Elgin Brian Wahyu Bramadhika" title="Software Engineering Enthusiast" avatarSrc="/avatar.png" avatarSrcMobile="/avatar.png" />
+      <ActivityTopShade />
     </div>
   );
 };

@@ -35,10 +35,10 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
 
         <div className="text-white">
           <div className="flex flex-col gap-8 items-center">
-            <img src="https://i.gifer.com/17xo.gif" alt="Meme" width={100} height={20} />
+            <img src="https://i.gifer.com/17xo.gif" alt="Meme" width={80} height={20} />
 
             <ul className="text-sm text-center font-[family-name:var(--font-geist-mono)]">
-              <li>This website is currently under development. Some features may not be fully functional yet.</li>
+              <li>This section is still under development.</li>
             </ul>
           </div>
         </div>
