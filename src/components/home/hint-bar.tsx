@@ -23,7 +23,7 @@ const HintBar: React.FC = () => {
       <FaArrowDown className="animate-bounce text-xl" />
       <div>
         <div className="font-semibold text-sm sm:text-base mb-1">Scroll down to start exploring!</div>
-        <div className="font-light text-xs sm:text-sm">Learn more about myself.</div>
+        <div className="font-light text-xs sm:text-sm">Last Updated in December 2024</div>
       </div>
     </div>
   );

@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Elgin Brian Wahyu Bramadhika",
   description: "Portfolio Website",
+  icons: {
+    icon: "/pluto.png",
+  },
 };
 
 export default function RootLayout({
